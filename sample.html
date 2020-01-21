@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    <body>
+        <center>
+            Enter value-1:<input type="text" id="value1"/>
+            <br/>
+            <br/>
+            Enter value-2:<input type="text" id="value2"/>
+            <br/>
+            <br/>
+            <input type="button" value="ADD" id="add">
+            <input type="button" value="Subtract" id="sub">
+            <input type="button" value="Multiply" id="mul">
+            <input type="button" value="Division" id="div">
+            <br/>
+            <br/>
+            Result:<input type="text" id="result" readonly>
+            <br/>
+            <br/>
+            <input type="button"  value="Reset" id="reset">
+            <h3 id="novalue"></h3>
+            <h3 id="invalid"></h3>
+        </center>
+        <script>
+            function add()
+            {
+                var first=Number(document.getElementById('value1').value);
+                var second=Number(document.getElementById('value2').value);
+                if(isNaN(first)&&isNaN(second))
+                {
+                    document.getElementById('novalue').innerHTML="invalid input";
+                }
+                else if(first=="" && second=="") 
+                {
+                    document.getElementById('invalid').innerHTML="No value provided";
+               
+                }
+                else{
+                    var ad=first+second;
+                    document.getElementById('result').value=ad;
+
+                }
+                
+            }
+            function sub()
+            {
+                var first=Number(document.getElementById('value1').value);
+                var second=Number(document.getElementById('value2').value);
+                if(isNaN(first)&&isNaN(second))
+                {
+                    document.getElementById('novalue').innerHTML="invalid input";
+                }
+                else if(first=="" && second=="") 
+                {
+                    document.getElementById('invalid').innerHTML="No value provided";
+               
+                }
+                else{
+                    var ad=first-second;
+                    document.getElementById('result').value=ad;
+
+                }
+            }
+            function mul()
+            {
+                var first=Number(document.getElementById('value1').value);
+                var second=Number(document.getElementById('value2').value);
+                if(isNaN(first)&&isNaN(second))
+                {
+                    document.getElementById('novalue').innerHTML="invalid input";
+                }
+                else if(first=="" && second=="") 
+                {
+                    document.getElementById('invalid').innerHTML="No value provided";
+               
+                }
+                else{
+                    var ad=first*second;
+                    document.getElementById('result').value=ad;
+
+                }
+            }
+            function div()
+            {
+                var first=Number(document.getElementById('value1').value);
+                var second=Number(document.getElementById('value2').value);
+                if(isNaN(first)&&isNaN(second))
+                {
+                    document.getElementById('novalue').innerHTML="invalid input";
+                }
+                else if(first=="" && second=="") 
+                {
+                    document.getElementById('invalid').innerHTML="No value provided";
+               
+                }
+                else{
+                    var ad=first/second;
+                    document.getElementById('result').value=ad;
+
+                }
+            }
+            function reSet()
+            {
+                document.getElementById('value1').value="";
+                document.getElementById('value2').value="";
+                document.getElementById('result').value="";
+                document.getElementById('novalue').innerHTML="";
+                document.getElementById('invalid').innerHTML="";
+            }
+            document.getElementById('add').addEventListener('click',add);
+            document.getElementById('sub').addEventListener('click',sub);
+            document.getElementById('mul').addEventListener('click',mul);
+            document.getElementById('div').addEventListener('click',div);
+            document.getElementById('reset').addEventListener('click',reSet)
+        </script>
+    </body>
+</html>
